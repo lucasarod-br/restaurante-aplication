@@ -1,0 +1,7 @@
+1,Livre
+2,Ocupada
+3,Livre
+4,Ocupada
+5,Livre
+6,Ocupada
+7,Livre
