@@ -2,22 +2,17 @@ package main.java.view;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Scene;
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
-import javafx.scene.text.Text;
-import javafx.stage.Stage;
 import main.java.controller.FuncionarioController;
 
 import java.util.Arrays;
 import java.util.List;
 
-public class GerenciadorMesas {
+public class GerenciadorMesas implements View {
 
     private FuncionarioController controller;
 
@@ -25,7 +20,8 @@ public class GerenciadorMesas {
         this.controller = controller;
     }
 
-    public GridPane show() {
+    @Override
+    public Parent show() {
 
 
 

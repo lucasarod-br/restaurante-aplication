@@ -14,6 +14,8 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import main.java.view.View;
+
 import javafx.scene.Scene;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
@@ -32,7 +34,6 @@ public class FuncionarioController {
         this.view = view;
     }
 
-    // Métodos para interação entre Model e View
     public void cadastrarFuncionario(Funcionario funcionario) {
         model.cadastrarFuncionario(funcionario);
     }
@@ -42,7 +43,6 @@ public class FuncionarioController {
     }
 
     public boolean loginFuncionario(String userName, String email) {
-        System.out.println("Entrou no controller");
         return model.loginFuncionario(userName, email);
     }
 
@@ -50,10 +50,9 @@ public class FuncionarioController {
         model.atualizarFuncionario(funcionario);
     }
 
-    public void exibirFuncionario(int id) {
-        Funcionario funcionario = model.obterFuncionario(id);
-        // view.exibirFuncionario(funcionario);
-    }
+    // public void exibirFuncionario(int id) {
+    // Funcionario funcionario = model.obterFuncionario(id);
+    // }
 
     public String validarFormulario(TextField cpfField, TextField nomeField, DatePicker dataNascPicker,
             TextField usernameField, TextField emailField, TextField localField, TextField cepField,
@@ -124,47 +123,31 @@ public class FuncionarioController {
     }
 
     public void abrirTelaLogin(Scene scene) {
-        try {
-            fecharView(scene);
-            FuncionarioLogin login = new FuncionarioLogin();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(login.show()));
-            stage.show();
-        } catch (Exception ex) {
-            System.out.println("Erro ao abrir a tela de login");
-            ex.printStackTrace();
-        }
+        FuncionarioLogin funcionarioLogin = new FuncionarioLogin();
+        funcionarioLogin.setController(this);
+        abrirTela(scene, funcionarioLogin);
     }
 
     public void abrirTelaFormulario(Scene scene) {
-        System.out.println("Abrindo a tela de formulário");
-        fecharView(scene);
         FuncionarioForm funcionarioForm = new FuncionarioForm();
-        Stage stage = new Stage();
-        stage.setScene(new Scene(funcionarioForm.show()));
-        stage.show();
+        funcionarioForm.setController(this);
+        abrirTela(scene, funcionarioForm);
     }
 
     public void abrirHome(Scene scene) {
-        try {
-            // fechar a tela atual
-            fecharView(scene);
+        Home home = new Home();
+        abrirTela(scene, home);
+    }
 
-            // Abrir a tela de home
-            Home home = new Home();
-            Stage stage = new Stage();
-            stage.setScene(new Scene(home.show()));
-            stage.show();
-        } catch (Exception ex) {
-            System.out.println("Erro ao abrir a tela de home");
-            ex.printStackTrace();
-        }
+    public void abrirTela(Scene sceneAtual, View novaTela) {
+        fecharView(sceneAtual);
+        Stage stage = new Stage();
+        stage.setScene(new Scene(novaTela.show()));
+        stage.show();
     }
 
     public void fecharView(Scene scene) {
-
         Stage stage = (Stage) scene.getWindow();
         stage.close();
-
     }
 }

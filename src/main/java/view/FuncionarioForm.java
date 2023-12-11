@@ -2,7 +2,7 @@ package main.java.view;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Scene;
+import javafx.scene.Parent;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
@@ -11,15 +11,15 @@ import javafx.scene.paint.Color;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
 import main.java.model.Funcionario;
 import main.java.controller.FuncionarioController;
 
-public class FuncionarioForm {
+public class FuncionarioForm implements View {
 
     private FuncionarioController controller;
 
-    public GridPane show() {
+    @Override
+    public Parent show() {
         // Stage primaryStage = new Stage();
         // primaryStage.setTitle("Formulário de Funcionário");
         

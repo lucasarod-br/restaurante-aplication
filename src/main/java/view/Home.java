@@ -2,20 +2,18 @@ package main.java.view;
 
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
-import javafx.scene.Scene;
+import javafx.scene.Parent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 import main.java.controller.FuncionarioController;
 import javafx.scene.control.Button;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
 
-public class Home {
+public class Home implements View {
 
     private FuncionarioController controller;
 
-    public GridPane show() {
+    @Override
+    public Parent show() {
         GridPane gridPane = new GridPane();
 
         Button mesasButton = new Button("Mesas");
