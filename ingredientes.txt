@@ -1,0 +1,5 @@
+Batata,50
+Arroz,10
+Chocolate,37
+Ovos,30
+Azeite,12

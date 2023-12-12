@@ -8,11 +8,8 @@ import main.java.model.Endereco;
 import main.java.model.Funcionario;
 import main.java.view.FuncionarioForm;
 import main.java.view.FuncionarioLogin;
+import main.java.view.GerenciadorEstoque;
 import main.java.view.Home;
-
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
 
 import main.java.view.View;
 
@@ -135,8 +132,13 @@ public class FuncionarioController {
     }
 
     public void abrirHome(Scene scene) {
-        Home home = new Home();
+        Home home = new Home(this);
         abrirTela(scene, home);
+    }
+
+    public void abrirGerenciadorEstoque(Scene scene) {
+        GerenciadorEstoque gerenciadorEstoque = new GerenciadorEstoque();
+        abrirTela(scene, gerenciadorEstoque);
     }
 
     public void abrirTela(Scene sceneAtual, View novaTela) {
