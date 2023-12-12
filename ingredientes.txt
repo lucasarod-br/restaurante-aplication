@@ -1,5 +1,11 @@
-Batata,50
+Uva,11
+Batata,6
 Arroz,10
-Chocolate,37
-Ovos,30
-Azeite,12
+Canela,55
+Trigo,2
+Frango,21
+Cebola Roxa,55
+Chocolate,21
+Ovos,7
+Amendoim,85
+Azeite,2

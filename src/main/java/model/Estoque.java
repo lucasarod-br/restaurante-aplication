@@ -16,12 +16,14 @@ public class Estoque {
         this.produtos = new HashMap<>();
     }
 
-    public void adicionarIngrediente(Ingrediente ingrediente, int quantidade) {
+    public boolean adicionarIngrediente(Ingrediente ingrediente, int quantidade) {
         // Encontrar o ingrediente no arquivo de texto e adicionar a quantidade ao estoque
         Map<String, Integer> ingredientes = lerIngredientes();
         int quantidadeAtual = ingredientes.getOrDefault(ingrediente.getNome(), 0);
         ingredientes.put(ingrediente.getNome(), quantidadeAtual + quantidade);
         salvarIngredientes(ingredientes);
+
+        return true;
     }
 
     public void salvarIngredientes(Map<String, Integer> ingredientes) {
@@ -35,11 +37,13 @@ public class Estoque {
         }
     }
 
-    public void criarIngrediente(String nome, int quantidade) {
+    public boolean criarIngrediente(String nome, int quantidade) {
         // Adicionar um novo ingrediente ao arquivo de texto
         Map<String, Integer> ingredientes = lerIngredientes();
         ingredientes.put(nome, quantidade);
         salvarIngredientes(ingredientes);
+
+        return true;
     }
 
     public Map<String, Integer> lerIngredientes() {

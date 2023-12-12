@@ -15,12 +15,12 @@ public class EstoqueController {
         this.view = view;
     }
 
-    public void adicionarIngrediente(Ingrediente ingrediente, int quantidade) {
-        model.adicionarIngrediente(ingrediente, quantidade);
+    public boolean adicionarIngrediente(Ingrediente ingrediente, int quantidade) {
+        return model.adicionarIngrediente(ingrediente, quantidade);
     }
 
-    public void criarIngrediente(String nome, int quantidade) {
-        model.criarIngrediente(nome, quantidade);
+    public boolean criarIngrediente(String nome, int quantidade) {
+        return model.criarIngrediente(nome, quantidade);
     }
 
     // public void reabastecerEstoque() {
